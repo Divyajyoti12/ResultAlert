@@ -1,0 +1,88 @@
+#Header Files
+import pandas as pd
+import numpy as np
+
+#Reading the Excel Sheet into folder 
+df=pd.read_excel('DEMO.xlsx')
+print(df)
+print(type(df))
+
+#Converting the dataframe into ndarray
+df=df.to_numpy()
+type(df)
+
+#Printing the messages
+for i in df:
+        print("This is to inform to Roll No:"+str(i[0])+"\nName:"+str(i[1])+"\nYour obtained result is:\n\nOOAD:"+str(i[2])+"\nES:"+str(i[3])+"\nWT:"+str(i[4])+"\nCN:"+str(i[5])+"\nAI:"+str(i[6])+"\n\nRegards\n")
+
+#SMTP code
+import smtplib 
+
+from email.mime.multipart import MIMEMultipart 
+
+from email.mime.text import MIMEText 
+
+from email.mime.base import MIMEBase 
+
+from email import encoders 
+
+def sendmail(i):  
+
+    fromaddr = "chinera.dj@gmail.com"
+
+    toaddr = i[7]
+
+
+    # instance of MIMEMultipart 
+
+    msg = MIMEMultipart() 
+
+
+    # storing the senders email address   
+
+    msg['From'] = fromaddr 
+
+
+    # storing the receivers email address  
+
+    msg['To'] = toaddr 
+
+
+    # storing the subject  
+
+    msg['Subject'] = "Result Declaration"
+
+
+    # string to store the body of the mail 
+
+
+    body = "This is to inform to Roll No:"+str(i[0])+"\nName:"+str(i[1])+"\nYour obtained result is:\n\nOOAD:"+str(i[2])+"\nES:"+str(i[3])+"\nWT:"+str(i[4])+"\nCN:"+str(i[5])+"\nAI:"+str(i[6])+"\n\nRegards\n"
+
+
+    # attach the body with the msg instance 
+
+    msg.attach(MIMEText(body, 'plain')) 
+
+
+    # Converts the Multipart msg into a string 
+
+    text = msg.as_string() 
+
+
+    # sending the mail 
+    s.sendmail(fromaddr, toaddr, text) 
+
+
+   
+    
+s = smtplib.SMTP('smtp.gmail.com', 587) 
+s.starttls() 
+s.login(fromaddr, "saidj361") 
+
+for i in df:
+    sendmail(i)
+    print('mail sent to '+i[7])
+    
+    
+# terminating the session 
+s.quit()
