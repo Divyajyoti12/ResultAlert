@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN PAGE</title>
+	<link rel="stylesheet" type="text/css" href="global.css">
+</head>
+<style>
+body {
+  background-image: url('lib.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<body>
+<form name="login">
+<div class="form-container">
+	<ul class="list">
+		<li><h1>Member Login</h1></li>
+		<li><input type="text" name="UserName" placeholder="Username"></li>
+		<li><input type="password" name="Password" placeholder="........"></li>
+		<li><input type="button" onclick="check(this.form)" value="Submit"></li>
+		<li>Forget Password</li>
+    </ul>
+</div>
+</form>
+<script language="javascript">
+function check(form)
+{
+	if(form.UserName.value=="amruthaittamsetty@gmail.com" && form.Password.value=="1234")
+	{
+		window.open('file:///C:/Users/Divya/Desktop/New%20folder/a.html')
+	}
+	else if(form.UserName.value=="chinera.dj@gmail.com" && form.Password.value=="1235")
+	{
+		window.open('file:///C:/Users/Divya/Desktop/New%20folder/index1.html')
+	}
+	else if(form.UserName.value=="Sadeykeerthana@gmail.com" && form.Password.value=="1236")
+	{
+		window.open('file:///C:/Users/Divya/Desktop/New%20folder/index1.html')
+	}
+	else if(form.UserName.value=="saitejalabba@gmail.com" && form.Password.value=="1237")
+	{
+		window.open('file:///C:/Users/Divya/Desktop/New%20folder/index1.html')
+	}
+	else if(form.UserName.value=="sriadi.ch@gmail.com" && form.Password.value=="1238")
+	{
+		window.open('file:///C:/Users/Divya/Desktop/New%20folder/index1.html')
+	}
+	else
+	{
+		alert("The username and password you entered do not match.")
+	}
+}
+</script>
+</html>

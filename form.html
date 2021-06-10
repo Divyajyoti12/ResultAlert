@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload</title>
+	<link rel="stylesheet" type="text/css" href="form_css.css">
+</head>
+<body>
+	<center>
+		<div class="main">
+			<form>
+				<!--<input type="file" id="file">-->
+				<p>Year:<input type="number" name="Fname"></p><br>
+				<p>Section:<input type="text" name="Lname"></p><br>
+				<label for="myfile">Select File:</label>
+				<input type="file" id="myfile" name="myfile"><br><br>
+				<p><input type="button" onclick="check(this.form)" value="Submit"></p>
+			</form>
+		</div>
+	</center>
+<script language="javascript">
+function check(form)
+{
+if(form.Fname.value!=""&& form.Lname.value!=""&& form.myfile.value!="")
+alert("Emails are on their way!");
+else if(form.Fname.value==""|| form.Lname.value==""|| form.Username.value==""|| form.Password.value==""|| form.Course.value=="")
+alert("You need to fill a record!");
+}
+</script>
+
+</body>
+</html>
