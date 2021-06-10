@@ -2,19 +2,24 @@
 <html>
 <head>
 	<title>Upload</title>
-	<link rel="stylesheet" type="text/css" href="form_css.css">
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  	<link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  	<link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static',filename='form_css.css')}}">
 </head>
 <body>
 	<center>
 		<div class="main">
-			<form>
-				<!--<input type="file" id="file">-->
-				<p>Year:<input type="number" name="Fname"></p><br>
-				<p>Section:<input type="text" name="Lname"></p><br>
+			<form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+         		<p>Year:<input type="number" name="Fname"></p><br>
+	 	 		<p>Section:<input type="text" name="Lname"></p><br>
 				<label for="myfile">Select File:</label>
-				<input type="file" id="myfile" name="myfile"><br><br>
-				<p><input type="button" onclick="check(this.form)" value="Submit"></p>
-			</form>
+         		<input type = "file" name = "file" />
+         		<input type = "submit"/>
+      		</form>
 		</div>
 	</center>
 <script language="javascript">
