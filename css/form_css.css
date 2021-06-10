@@ -1,0 +1,82 @@
+body{
+	background-image: url("https://images.unsplash.com/photo-1520970014086-2208d157c9e2?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTR8MTU4MTczOHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&w=1000&q=80");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.main{
+	position: absolute;
+	top: 17%;
+	left: 30%;
+	width: 460px;
+	border: 2px solid: #000;
+	padding: 40px;
+	background-color: rgba(0,0,0,0.3);
+	color: #fff;
+	border-radius: 12px;
+	padding-top: 80px;
+}
+#myfile::-webkit-file-upload-button{
+	visibility: hidden;
+}
+#myfile, input[type=button], #Color{
+	width: 90%;
+	height: 70%;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 17px;
+	border: 1px solid: #000;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,0.2);
+	color: #fff;
+	transition: .5s all;
+}
+#myfile, input[type=text], #Color{
+	width: 90%;
+	height: 70%;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 17px;
+	border: 1px solid: #000;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,0.2);
+	color: #fff;
+	transition: .5s all;
+}
+#myfile, input[type=number], #Color{
+	width: 90%;
+	height: 70%;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 17px;
+	border: 1px solid: #000;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,0.2);
+	color: #fff;
+	transition: .5s all;
+}
+#myfile , input[type=button]{
+	width: 84%;
+	height: 45px;
+	padding-top: 23px;
+	padding-left: 20px;
+}
+#myfile , input[type=text]{
+	width: 84%;
+	height: 45px;
+	padding-top: 23px;
+	padding-left: 20px;
+}
+#myfile , input[type=number]{
+	width: 84%;
+	height: 45px;
+	padding-top: 23px;
+	padding-left: 20px;
+}
+#myfile:hover , input[type=button]:hover , #Color:hover{
+	cursor: pointer;
+	background-color: #4287f5;
+}

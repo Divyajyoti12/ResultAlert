@@ -1,0 +1,21 @@
+body{
+background-image:url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size:100% 100%;
+}
+h1
+{
+text-align:center;
+}
+table,th,td{
+border: 4px solid black;
+text-align:center;
+}
+th,td{
+padding: 10px;
+}
+table{
+width:100%;
+}
+
