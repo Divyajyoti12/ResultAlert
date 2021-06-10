@@ -1,0 +1,65 @@
+from flask import Flask,render_template,request
+
+import smtplib 
+
+from email.mime.multipart import MIMEMultipart 
+
+from email.mime.text import MIMEText 
+
+from email.mime.base import MIMEBase 
+
+from email import encoders
+
+import pandas as pd
+
+import numpy as np
+
+app=Flask(__name__)
+
+@app.route("/")
+def form():
+	return render_template("form.html")
+
+@app.route('/uploader', methods = ['GET','POST'])
+def uploader_file():
+   if request.method == 'POST':
+      f = request.files['file']
+      f.save(f.filename)
+     # print('hi')
+      
+      def sendmail(i):
+              fromaddr = "chinera.dj@gmail.com"
+              toaddr = i[7]
+              msg = MIMEMultipart() 
+              msg['From'] = fromaddr 
+              msg['To'] = toaddr 
+              msg['Subject'] = "Result Declaration"
+              body = "This is to inform to Roll No:"+str(i[0])+"\nName:"+str(i[1])+"\nYour obtained result is:\n\nOOAD:"+str(i[2])+"\nES:"+str(i[3])+"\nWT:"+str(i[4])+"\nCN:"+str(i[5])+"\nAI:"+str(i[6])+"\n\nRegards\n"
+              msg.attach(MIMEText(body, 'plain')) 
+              text = msg.as_string() 
+              s.sendmail(fromaddr, toaddr, text) 
+
+
+   
+    
+      s = smtplib.SMTP('smtp.gmail.com', 587) 
+      s.starttls()
+      fromaddr = "chinera.dj@gmail.com"
+      s.login(fromaddr, "********")
+      df=pd.read_excel('DEMO.xlsx')
+      df=df.to_numpy()
+
+
+
+      for i in df:
+              sendmail(i)
+              print('mail sent to '+i[7])
+    
+    
+# terminating the session 
+      s.quit()
+   return 'Emails are on their way!'
+
+
+if __name__=="__main__":
+	app.run(debug=True)
